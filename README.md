@@ -1,1 +1,9 @@
-# erl-chat-client
+chat_client
+=====
+
+An OTP application
+
+Build
+-----
+
+    $ rebar3 compile
