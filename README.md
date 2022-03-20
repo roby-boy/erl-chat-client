@@ -1,9 +1,8 @@
 Simple Chat Client
 =====
 
-Simple chat server on port 7000<br /> 
+Simple chat client on port 7000<br /> 
 An Erlang/OTP 22 application<br /> 
-Rebar3 project
 
 Build & Launch
 -----
