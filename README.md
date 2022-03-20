@@ -1,14 +1,18 @@
-chat_client
+Simple Chat Client
 =====
 
-An escript
+Simple chat client on port 7000<br /> 
+An Erlang/OTP 22 script<br /> 
 
-Build
+Build & Launch
 -----
+```
+erlc src/chat_client.erl
+erl -noshell -s chat_client main
+```
 
-    $ rebar3 escriptize
-
-Run
----
-
-    $ _build/default/bin/chat_client
+Note. Below does not work
+```
+rebar3 escriptize
+./_build/default/bin/chat_client
+```
