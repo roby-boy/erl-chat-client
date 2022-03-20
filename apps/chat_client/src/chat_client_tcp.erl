@@ -9,7 +9,7 @@ start() ->
 init([]) ->
   case gen_tcp:connect("localhost", 7000, [binary, {packet, 0}]) of
     {ok, Socket} ->
-      io:format("~s~n", ["connetion"]),
+      io:format("~s ~w~n", ["connetion", self()]),
       Pid_receive = spawn_link(?MODULE, receive_data, [Socket]),
       gen_tcp:controlling_process(Socket, Pid_receive),
       spawn_link(?MODULE, send_data, [Socket]),
@@ -20,7 +20,9 @@ init([]) ->
   end.
 
 send_data(Socket) ->
-  Input = io:get_line("~ "),
+  % timer:sleep(Sl),
+  % io:format("send_data ~w~n", [self()]),
+  Input = io:get_line("enter> "),
   case Input of
     "close" ++ _ ->
       close(Socket);
@@ -30,6 +32,7 @@ send_data(Socket) ->
   end.
 
 receive_data(Socket) ->
+  % io:format("receive_data ~w~n", [self()]),
   receive
     {tcp, Socket, Bin} ->
       Str = binary_to_list(Bin),
