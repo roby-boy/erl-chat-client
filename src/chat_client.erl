@@ -1,6 +1,6 @@
 -module(chat_client).
 % -export([main/0]).
--export([main/1, send_data/1, receive_data/1]).
+-export([main/1, main/0, send_data/1, receive_data/1]).
 
 %% escript Entry point
 main(_Args) ->
@@ -15,6 +15,9 @@ main(_Args) ->
       io:format("error connetion - ~s~n", [Reason]),
       {stop, Reason}
   end.
+
+main() -> 
+  main([]).
 
 send_data(Socket) ->
   Input = io:get_line("enter> "),
