@@ -11,11 +11,11 @@ erlc src/chat_client.erl
 erl -noshell -s chat_client main
 ```
 
-Note. Below does not work
+<!-- Note. Below does not work
 ```
 rebar3 escriptize
 ./_build/default/bin/chat_client
-```
+``` -->
 
 Client Commands
 -----
