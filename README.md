@@ -16,3 +16,9 @@ Note. Below does not work
 rebar3 escriptize
 ./_build/default/bin/chat_client
 ```
+
+Client Commands
+-----
+Type whatever you want.<br />
+The commands interpreted from the server are described at [server page](https://github.com/roby-boy/erl-chat-server/).<br />
+To exit from the client type "close".
